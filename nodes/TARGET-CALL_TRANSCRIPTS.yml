@@ -1,0 +1,181 @@
+fileVersion: 1
+id: 7cc4586b-280a-4e68-af33-d95a1a5d227a
+name: CALL_TRANSCRIPTS
+operation:
+  config:
+    basename: locname
+    catint: ""
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    compression: ""
+    dateformat: ""
+    enforceLength: ""
+    errornumber: ""
+    externalURI: s3://iceberg-hol/call_transcripts.json
+    extlocation: true
+    extvolume: iceberg_external_volume
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: ""
+    fileFormatName: ""
+    fileFormatType: File Format Values
+    fileNames: ""
+    filePattern: ""
+    fileType: JSON
+    forceLoad: ""
+    intextstage: false
+    loadUncertainFiles: ""
+    onError: ""
+    purgeBehavior: ""
+    recDelim: |+
+
+    replaceinvalidcharacters: false
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
+    skipHeader: "1"
+    stageName: Enter stage name-stage_name/folder_name/
+    stageStorageLocationName: Enter Storage Location name
+    storageintegration: ""
+    stripouterarray: false
+    tcatalog: Polaris
+    timeformat: ""
+    timestampformat: ""
+    trimSpace: false
+    truncateBefore: false
+    truncateColumns: ""
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be9446c3-188b-46c1-9e8e-4de04449872d
+          stepCounter: 7cc4586b-280a-4e68-af33-d95a1a5d227a
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: $1
+        sysJSON: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8a5a038-c7bb-4661-9b6d-cf495df814e0
+          stepCounter: 7cc4586b-280a-4e68-af33-d95a1a5d227a
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+        sysLdTs: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 108efa43-2512-4a65-9508-e5edfa0b6ca0
+          stepCounter: 7cc4586b-280a-4e68-af33-d95a1a5d227a
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+        sysFlNm: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b8c8804a-2c0f-4b95-98d8-a5ea75257e57
+          stepCounter: 7cc4586b-280a-4e68-af33-d95a1a5d227a
+        config: {}
+        dataType: BIGINT
+        defaultValue: ""
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_ROW_NUMBER
+        sysFlRwNm: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96fa08c3-cf1f-46db-a52c-8434015ef462
+          stepCounter: 7cc4586b-280a-4e68-af33-d95a1a5d227a
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_LAST_MODIFIED
+        sysFlLtMd: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c1aaa63-4817-4a38-9eb9-8cc09fbfbf8f
+          stepCounter: 7cc4586b-280a-4e68-af33-d95a1a5d227a
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$START_SCAN_TIME
+        sysFlScTm: true
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: CALL_TRANSCRIPTS
+        noLinkRefs: []
+  name: CALL_TRANSCRIPTS
+  overrideSQL: false
+  schema: ""
+  sqlType: Iceberg:::320
+  type: sql
+  version: 1
+type: Node
